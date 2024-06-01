@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 80
+var speed = 0
 var angular_speed = PI
 
 func _ready():
@@ -17,6 +17,12 @@ func _process(delta):
 	
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
-		velocity = Vector2.UP.rotated(rotation) * speed
+		if speed < 120:
+			speed += 1
+	if Input.is_action_pressed("ui_down"):
+		if speed > 0:
+			speed -= 1
+		
+	velocity = Vector2.UP.rotated(rotation) * speed
 	
 	position += velocity * delta
