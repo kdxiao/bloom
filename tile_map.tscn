@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=3 uid="uid://braq2d4no2q0g"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://braq2d4no2q0g"]
+>>>>>>> b4288ea (changed rendering settings, added bee trail)
 
 [ext_resource type="Texture2D" uid="uid://i2hgfqxtp2ey" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
 [ext_resource type="Script" path="res://bee_movement.gd" id="2_kxktu"]
@@ -6,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://milvwb15ah8g" path="res://bee_sprite/bee3.png" id="5_y7xby"]
 [ext_resource type="Texture2D" uid="uid://p3muuntyj7ca" path="res://bee_sprite/bee4.png" id="6_uvff1"]
 [ext_resource type="Texture2D" uid="uid://dnkwseqc535v8" path="res://bee_sprite/bee1.png" id="7_7r8ls"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cq0f3gmw6nful" path="res://assets/flower.png" id="7_iw0go"]
+=======
+[ext_resource type="Script" path="res://Line2D.gd" id="7_x6oo6"]
+>>>>>>> b4288ea (changed rendering settings, added bee trail)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c44ep"]
 texture = ExtResource("1_tnmf2")
@@ -121,6 +129,10 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="Curve" id="Curve_3vpvl"]
+_data = [Vector2(0.00246913, 0), 0.0, 0.0, 0, 0, Vector2(0.995062, 0.501676), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_g8qto")
 format = 2
@@ -141,6 +153,23 @@ sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
 
+<<<<<<< HEAD
 [node name="Flower" type="Sprite2D" parent="."]
 position = Vector2(97, 149)
 texture = ExtResource("7_iw0go")
+=======
+[node name="Line2D" type="Line2D" parent="Bee (Player)"]
+show_behind_parent = true
+texture_repeat = 2
+width_curve = SubResource("Curve_3vpvl")
+default_color = Color(1, 1, 1, 0.392157)
+sharp_limit = 2.08165e-12
+script = ExtResource("7_x6oo6")
+
+[node name="Flower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flower"]
+>>>>>>> b4288ea (changed rendering settings, added bee trail)
