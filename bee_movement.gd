@@ -1,7 +1,10 @@
-extends Area2D
+extends CharacterBody2D
 
 var speed = 80
 var angular_speed = PI
+
+func _ready():
+	$AnimatedSprite2D.play("default")
 
 func _process(delta):
 	var direction = 0
@@ -12,7 +15,7 @@ func _process(delta):
 	
 	rotation += angular_speed * direction * delta
 	
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
 		velocity = Vector2.UP.rotated(rotation) * speed
 	
