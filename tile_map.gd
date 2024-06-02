@@ -20,6 +20,7 @@ var startingColors = [Color8(255,179,186), Color8(186,255,201), Color8(186,225,2
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	$AudioStreamPlayer.play()
 	for i in startingFlowers:
 		var instance = flowerNode.instantiate()
 		instance.position = _rand_vector()
@@ -35,3 +36,7 @@ func _rand_vector():
 
 func _on_texture_button_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_audio_stream_player_finished():
+	$AudioStreamPlayer.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://braq2d4no2q0g"]
+[gd_scene load_steps=19 format=3 uid="uid://braq2d4no2q0g"]
 
 [ext_resource type="Texture2D" uid="uid://06m4lyl32aw1" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
 [ext_resource type="Texture2D" uid="uid://d00fd2nro6t5v" path="res://assets/arrow.png" id="2_01gxg"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dtkiw730vu4pc" path="res://assets/restart_hover.png" id="10_icwa7"]
 [ext_resource type="AudioStream" uid="uid://biwgx3dokekk8" path="res://audio/buzz.wav" id="11_85cay"]
 [ext_resource type="Script" path="res://Mute.gd" id="12_8tef5"]
-[ext_resource type="Texture2D" uid="uid://dud3empw2dw28" path="res://assets/music_on.png" id="12_yptwm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c44ep"]
 texture = ExtResource("1_tnmf2")
@@ -176,11 +175,9 @@ stream = ExtResource("11_85cay")
 autoplay = true
 
 [node name="Mute" type="TextureButton" parent="."]
-offset_left = 42.0
-offset_top = 7.0
-offset_right = 74.0
-offset_bottom = 39.0
-texture_normal = ExtResource("12_yptwm")
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
 script = ExtResource("12_8tef5")
 
 [connection signal="pressed" from="Restart" to="." method="_on_button_pressed"]
