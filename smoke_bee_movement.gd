@@ -30,5 +30,4 @@ func _process(delta):
 	position += velocity * delta
 
 func _on_collision_shape_2d_on_bee_position_jump(dx, dy):
-	position.x += dx
-	position.y += dy
+	position += Vector2(dx, dy)

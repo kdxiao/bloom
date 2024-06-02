@@ -7,10 +7,10 @@ radius = 7.0
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Flower" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Flower"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_836eo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ac8hu")
