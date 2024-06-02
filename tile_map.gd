@@ -1,7 +1,7 @@
 extends TileMap
 
 
-var width = 160
+var width = 320
 var height = 240
 
 

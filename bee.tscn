@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbmnkdn5ncypy"]
+[gd_scene load_steps=15 format=3 uid="uid://7yh7bysl6hiw"]
 
 [ext_resource type="Script" path="res://bee_movement.gd" id="1_mjvdv"]
 [ext_resource type="Texture2D" uid="uid://dnkwseqc535v8" path="res://bee_sprite/bee1.png" id="2_fhpuw"]
