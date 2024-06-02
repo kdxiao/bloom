@@ -15,11 +15,8 @@ func _process(delta):
 
 func _on_flower_body_entered(body):
 	print("flower entered")
-	emit_signal("flower_enter")
-	pass # Replace with function body.
-
+	body.entered_flower(self)
 
 func _on_flower_body_exited(body):
 	print("flower exited")
-	emit_signal("flower_exit")
-	pass # Replace with function body.
+	body.exited_flower()

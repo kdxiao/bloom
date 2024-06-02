@@ -3,8 +3,10 @@ extends CharacterBody2D
 var speed = 0
 var angular_speed = PI
 var in_flower = false
-var can_place_flower = true
-var flower;
+var curr_flower
+var flowers_visited = 0
+var flower
+var running_color
 
 func _ready():
 	$AnimatedSprite2D.play("default")
@@ -31,29 +33,30 @@ func _process(delta):
 	
 	position += velocity * delta
 	
-	if Input.is_action_pressed("ui_select"):
-		if can_place_flower == true:
+	if Input.is_action_just_pressed("ui_select"):
+		if flowers_visited == 0 and in_flower:
+			print("here0")
+			running_color = curr_flower.self_modulate
+			flowers_visited = 1
+		elif flowers_visited == 1 and in_flower:
+			print("here1")
+			running_color = running_color.lerp(curr_flower.self_modulate, 0.5)
+			flowers_visited = 2
+		elif flowers_visited == 2 and not in_flower:
+			print("here2")
 			var instance = flower.instantiate()
 			instance.position = global_position
+			instance.self_modulate = running_color
 			get_node("../../").add_child(instance)
-			can_place_flower = false
-			await get_tree().create_timer(0.3).timeout
-			can_place_flower = true
-			
-		# if in_flower == false: 
-		#	var instance = flower.instantiate()
-		#	instance.position = global_position
-		#	get_node("../../").add_child(instance)
-		#	instance.connect("flower_enter", _on_flower_enter)
-		#	instance.connect("flower_exit", _on_flower_exit)
-		#	in_flower = true
+			flowers_visited = 0
 
-func _on_flower_enter():
+func entered_flower(fl):
 	in_flower = true
+	curr_flower = fl
+	print(curr_flower.self_modulate)
 
-func _on_flower_exit():
+func exited_flower():
 	in_flower = false
 
 func _on_collision_shape_2d_on_bee_position_jump(dx, dy):
-	position.x += dx
-	position.y += dy
+	position += Vector2(dx, dy)
