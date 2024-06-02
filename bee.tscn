@@ -64,6 +64,7 @@ script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Center"]
 show_behind_parent = true
+z_index = 1
 width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
@@ -88,6 +89,7 @@ script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Right"]
 show_behind_parent = true
+z_index = 1
 width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
@@ -109,6 +111,7 @@ script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Up"]
 show_behind_parent = true
+z_index = 1
 width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
@@ -130,6 +133,7 @@ script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Down"]
 show_behind_parent = true
+z_index = 1
 width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
@@ -151,6 +155,7 @@ script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Left"]
 show_behind_parent = true
+z_index = 1
 width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
