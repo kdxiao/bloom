@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ogo80eqvuiiy"]
+[gd_scene format=3 uid="uid://bpq8d2vdb7b50"]
 
 [node name="GUI" type="MarginContainer"]
 offset_right = 40.0
