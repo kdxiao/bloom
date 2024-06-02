@@ -37,6 +37,7 @@ func _process(delta):
 			get_node("../../").add_child(instance)
 			instance.connect("flower_enter", _on_flower_enter)
 			instance.connect("flower_exit", _on_flower_exit)
+			in_flower = true
 
 func _on_flower_enter():
 	in_flower = true
