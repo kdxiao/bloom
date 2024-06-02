@@ -14,9 +14,11 @@ func _process(delta):
 
 
 func _on_flower_body_entered(body):
-	print("flower entered")
-	body.entered_flower(self)
+	if body.get_name() != "Line2D":
+		print("flower entered")
+		body.entered_flower(self)
 
 func _on_flower_body_exited(body):
-	print("flower exited")
-	body.exited_flower()
+	if body.get_name() != "Line2D":
+		print("flower exited")
+		body.exited_flower()
