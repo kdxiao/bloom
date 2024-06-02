@@ -32,4 +32,6 @@ func _rand_vector():
 	return Vector2(first, second)
 	
 
-	
+
+func _on_texture_button_pressed():
+	get_tree().reload_current_scene()

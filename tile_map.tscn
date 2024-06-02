@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://braq2d4no2q0g"]
+[gd_scene load_steps=17 format=3 uid="uid://braq2d4no2q0g"]
 
 [ext_resource type="Texture2D" uid="uid://i2hgfqxtp2ey" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
 [ext_resource type="Texture2D" uid="uid://d00fd2nro6t5v" path="res://assets/arrow.png" id="2_01gxg"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://7yh7bysl6hiw" path="res://bee.tscn" id="3_yjwbk"]
 [ext_resource type="Texture2D" uid="uid://53t1xmj6ojdm" path="res://assets/button.png" id="4_0kyl3"]
 [ext_resource type="Texture2D" uid="uid://dsxhij8fkkx8i" path="res://assets/plus.png" id="5_7brtu"]
+[ext_resource type="Texture2D" uid="uid://b4otopp7jstpq" path="res://assets/restart.png" id="8_1aaqt"]
+[ext_resource type="Texture2D" uid="uid://dl2pxjc18n0gq" path="res://assets/restart_press.png" id="9_u4hwf"]
+[ext_resource type="Texture2D" uid="uid://dtkiw730vu4pc" path="res://assets/restart_hover.png" id="10_icwa7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c44ep"]
 texture = ExtResource("1_tnmf2")
@@ -146,3 +149,22 @@ script = ExtResource("3_hu054")
 
 [node name="Bee" parent="." instance=ExtResource("3_yjwbk")]
 position = Vector2(239, 262)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 36.0
+offset_bottom = 36.0
+
+[node name="TextureButton" type="TextureButton" parent="Button"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 31.0
+offset_bottom = 31.0
+texture_normal = ExtResource("8_1aaqt")
+texture_pressed = ExtResource("9_u4hwf")
+texture_hover = ExtResource("10_icwa7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button/TextureButton" to="." method="_on_texture_button_pressed"]
