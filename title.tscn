@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyq7sc8ykbke3"]
+
+[ext_resource type="Script" path="res://title.gd" id="1_dfjqp"]
+[ext_resource type="Texture2D" uid="uid://dyav21rs3eqnc" path="res://assets/start.png" id="2_x4fkj"]
+[ext_resource type="Texture2D" uid="uid://br23yune8p0de" path="res://assets/start_hover.png" id="3_85qy0"]
+[ext_resource type="Texture2D" uid="uid://bhtxo4q6ps8qf" path="res://assets/start_pressed.png" id="3_to8di"]
+[ext_resource type="FontFile" uid="uid://bv2nbyevalkhp" path="res://assets/Minecraft.ttf" id="5_fpjj7"]
+[ext_resource type="Texture2D" uid="uid://dvtc4e8mu0pu4" path="res://assets/grass_tileset.png" id="6_nkt41"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfjqp")
+
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 101.0
+offset_right = 189.0
+offset_bottom = 133.0
+texture_normal = ExtResource("2_x4fkj")
+texture_pressed = ExtResource("3_to8di")
+texture_hover = ExtResource("3_85qy0")
+ignore_texture_size = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 30.0
+offset_right = 226.0
+offset_bottom = 78.0
+theme_override_fonts/normal_font = ExtResource("5_fpjj7")
+bbcode_enabled = true
+text = "[center] You are a bee.
+Go plant some flowers. [/center]"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 120.25)
+scale = Vector2(6.66667, 4.98958)
+texture = ExtResource("6_nkt41")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

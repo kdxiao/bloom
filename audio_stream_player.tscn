@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4y1mtectdqkv"]
+
+[ext_resource type="AudioStream" uid="uid://biwgx3dokekk8" path="res://audio/buzz.wav" id="1_83u16"]
+[ext_resource type="Script" path="res://audio_stream_player.gd" id="2_sepo2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_83u16")
+autoplay = true
+script = ExtResource("2_sepo2")
