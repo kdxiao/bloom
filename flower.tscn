@@ -1,10 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3un3r3coig0u"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" path="res://assets/flower_white.png" id="1_vjmqf"]
-=======
-[ext_resource type="Texture2D" uid="uid://h677f60ykkuv" path="res://assets/flower_white.png" id="1_vjmqf"]
->>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ac8hu"]
 radius = 7.0
