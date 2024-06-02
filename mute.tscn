@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://eoc4vt2tjrca"]
+
+[ext_resource type="Texture2D" uid="uid://dud3empw2dw28" path="res://assets/music_on.png" id="1_cub4a"]
+[ext_resource type="Script" path="res://Mute.gd" id="2_ei70i"]
+
+[node name="Mute" type="TextureButton"]
+offset_left = 42.0
+offset_top = 7.0
+offset_right = 74.0
+offset_bottom = 39.0
+focus_mode = 0
+texture_normal = ExtResource("1_cub4a")
+script = ExtResource("2_ei70i")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

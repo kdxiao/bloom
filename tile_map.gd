@@ -1,6 +1,5 @@
 extends TileMap
 
-
 var width = 320
 var height = 240
 
@@ -26,6 +25,8 @@ func _ready():
 		instance.position = _rand_vector()
 		instance.self_modulate = startingColors[i] 
 		add_child(instance)
+
+		
 	
 func _rand_vector():
 	var first = rng.randi_range(minX, maxX)

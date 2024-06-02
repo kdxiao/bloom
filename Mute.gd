@@ -13,6 +13,10 @@ func _ready():
 	texture_normal = music_on
 	texture_pressed = music_on_press
 	texture_hover = music_on_hover
+	if AudioServer.is_bus_mute(music_bus):
+		texture_normal = music_off
+		texture_pressed = music_off_press
+		texture_hover = music_off_hover
 
 func _on_pressed():
 	AudioServer.set_bus_mute(music_bus, not AudioServer.is_bus_mute(music_bus))
