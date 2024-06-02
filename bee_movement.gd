@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 0
 var angular_speed = PI
+var in_flower = false
 var flower;
 
 func _ready():
@@ -29,10 +30,19 @@ func _process(delta):
 	
 	position += velocity * delta
 	
-	if Input.is_action_pressed("ui_select"): 
-		var instance = flower.instantiate()
-		instance.position = global_position
-		get_node("../../").add_child(instance)
+	if Input.is_action_pressed("ui_select"):
+		if in_flower == false: 
+			var instance = flower.instantiate()
+			instance.position = global_position
+			get_node("../../").add_child(instance)
+			instance.connect("flower_enter", _on_flower_enter)
+			instance.connect("flower_exit", _on_flower_exit)
+
+func _on_flower_enter():
+	in_flower = true
+
+func _on_flower_exit():
+	in_flower = false
 
 func _on_collision_shape_2d_on_bee_position_jump(dx, dy):
 	position.x += dx
