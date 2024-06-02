@@ -61,10 +61,18 @@ func _process(delta):
 
 func entered_flower(fl):
 	in_flower = true
+	if flowers_visited == 0:
+		ci1.self_modulate = Color8(220,220,220)
+	if flowers_visited == 1:
+		ci2.self_modulate = Color8(220,220,220)
 	curr_flower = fl
 	print(curr_flower.self_modulate)
 
 func exited_flower():
+	if flowers_visited == 0:
+		ci1.self_modulate = Color8(255,255,255)
+	if flowers_visited == 1:
+		ci2.self_modulate = Color8(255,255,255)
 	in_flower = false
 
 func _on_collision_shape_2d_on_bee_position_jump(dx, dy):

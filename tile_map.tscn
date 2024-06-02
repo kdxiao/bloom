@@ -100,11 +100,11 @@ texture_normal = ExtResource("12_yptwm")
 script = ExtResource("12_8tef5")
 
 [node name="Color1" type="Polygon2D" parent="."]
-position = Vector2(153, -38)
+position = Vector2(151, -38)
 polygon = PackedVector2Array(89, 47, 105, 47, 105, 63, 89, 63)
 
 [node name="Color2" type="Polygon2D" parent="."]
-position = Vector2(180, -38)
+position = Vector2(179, -38)
 polygon = PackedVector2Array(89, 47, 105, 47, 105, 63, 89, 63)
 
 [node name="Color3" type="Polygon2D" parent="."]
@@ -112,18 +112,18 @@ position = Vector2(207, -38)
 polygon = PackedVector2Array(89, 47, 105, 47, 105, 63, 89, 63)
 
 [node name="Equal" type="RichTextLabel" parent="."]
-offset_left = 287.0
-offset_top = 4.0
-offset_right = 296.0
-offset_bottom = 44.0
+offset_left = 285.0
+offset_top = 6.0
+offset_right = 294.0
+offset_bottom = 46.0
 text = "="
 scroll_active = false
 
 [node name="Plus" type="RichTextLabel" parent="."]
-offset_left = 260.0
-offset_top = 4.0
-offset_right = 269.0
-offset_bottom = 44.0
+offset_left = 257.0
+offset_top = 7.0
+offset_right = 266.0
+offset_bottom = 47.0
 text = "+"
 scroll_active = false
 
