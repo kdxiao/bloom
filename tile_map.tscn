@@ -155,6 +155,7 @@ offset_left = 7.0
 offset_top = 8.0
 offset_right = 36.0
 offset_bottom = 36.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="Button"]
 layout_mode = 0

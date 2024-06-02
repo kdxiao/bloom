@@ -19,6 +19,7 @@ config/icon="res://bee_sprite/bee1.png"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [input]
