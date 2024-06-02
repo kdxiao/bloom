@@ -29,8 +29,8 @@ func _ready():
 		
 	
 func _rand_vector():
-	var first = rng.randi_range(minX, maxX)
-	var second = rng.randi_range(minY, maxY)
+	var first = rng.randi_range(minX+30, maxX-30)
+	var second = rng.randi_range(minY+30, maxY-30)
 	return Vector2(first, second)
 	
 
