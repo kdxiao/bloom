@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Flower.gd" id="2_qvwv0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ac8hu"]
-radius = 7.0
 
 [node name="Sprite2D" type="Sprite2D"]
 texture = ExtResource("1_vjmqf")
