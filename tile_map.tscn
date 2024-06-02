@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://braq2d4no2q0g"]
 
-[ext_resource type="Texture2D" uid="uid://06m4lyl32aw1" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
+[ext_resource type="Texture2D" uid="uid://i2hgfqxtp2ey" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
 [ext_resource type="Texture2D" uid="uid://d00fd2nro6t5v" path="res://assets/arrow.png" id="2_01gxg"]
 [ext_resource type="Texture2D" uid="uid://dvtc4e8mu0pu4" path="res://assets/grass_tileset.png" id="2_8epic"]
 [ext_resource type="Script" path="res://tile_map.gd" id="3_hu054"]
