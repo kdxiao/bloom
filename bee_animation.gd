@@ -8,4 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	speed_scale = 1 + (get_parent().speed) * 0.05
 	pass

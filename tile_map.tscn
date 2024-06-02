@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://braq2d4no2q0g"]
+[gd_scene load_steps=7 format=3 uid="uid://cdqm4dcjxw6j0"]
 
 [ext_resource type="Texture2D" uid="uid://i2hgfqxtp2ey" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tnmf2"]
 [ext_resource type="Texture2D" uid="uid://dvtc4e8mu0pu4" path="res://assets/grass_tileset.png" id="2_8epic"]
-[ext_resource type="PackedScene" uid="uid://dpa5p57ejnuo8" path="res://bee.tscn" id="3_yjwbk"]
+[ext_resource type="PackedScene" uid="uid://bbmnkdn5ncypy" path="res://bee.tscn" id="3_yjwbk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c44ep"]
 texture = ExtResource("1_tnmf2")

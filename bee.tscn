@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpa5p57ejnuo8"]
+[gd_scene load_steps=15 format=3 uid="uid://bbmnkdn5ncypy"]
 
 [ext_resource type="Script" path="res://bee_movement.gd" id="1_mjvdv"]
 [ext_resource type="Texture2D" uid="uid://dnkwseqc535v8" path="res://bee_sprite/bee1.png" id="2_fhpuw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://p3muuntyj7ca" path="res://bee_sprite/bee4.png" id="4_nrurg"]
 [ext_resource type="Texture2D" uid="uid://co2nqmnshihme" path="res://bee_sprite/bee2.png" id="5_7q2ro"]
 [ext_resource type="Script" path="res://Line2D.gd" id="6_p7vx2"]
+[ext_resource type="Script" path="res://bee_animation.gd" id="7_v1yfv"]
 [ext_resource type="Script" path="res://smoke_bee_movement.gd" id="8_6q5th"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qe7yu"]
@@ -59,6 +60,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
+script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Center"]
 show_behind_parent = true
@@ -82,6 +84,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
+script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Right"]
 show_behind_parent = true
@@ -102,6 +105,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
+script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Up"]
 show_behind_parent = true
@@ -122,6 +126,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
+script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Down"]
 show_behind_parent = true
@@ -142,6 +147,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
+script = ExtResource("7_v1yfv")
 
 [node name="Line2D" type="Line2D" parent="Left"]
 show_behind_parent = true
