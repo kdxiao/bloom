@@ -28,11 +28,6 @@ func _process(delta):
 	velocity = Vector2.UP.rotated(rotation) * speed
 	
 	position += velocity * delta
-	
-	if Input.is_action_pressed("ui_select"): 
-		var instance = flower.instantiate()
-		instance.position = global_position
-		get_node("../../").add_child(instance)
 
 func _on_collision_shape_2d_on_bee_position_jump(dx, dy):
 	position.x += dx

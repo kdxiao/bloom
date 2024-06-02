@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpa5p57ejnuo8"]
+[gd_scene load_steps=14 format=3 uid="uid://dpa5p57ejnuo8"]
 
 [ext_resource type="Script" path="res://bee_movement.gd" id="1_mjvdv"]
 [ext_resource type="Texture2D" uid="uid://dnkwseqc535v8" path="res://bee_sprite/bee1.png" id="2_fhpuw"]
@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://p3muuntyj7ca" path="res://bee_sprite/bee4.png" id="4_nrurg"]
 [ext_resource type="Texture2D" uid="uid://co2nqmnshihme" path="res://bee_sprite/bee2.png" id="5_7q2ro"]
 [ext_resource type="Script" path="res://Line2D.gd" id="6_p7vx2"]
+[ext_resource type="Script" path="res://smoke_bee_movement.gd" id="8_6q5th"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmxh3"]
-radius = 8.0
-height = 18.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_qe7yu"]
+radius = 7.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0quc"]
 animations = [{
@@ -36,6 +36,13 @@ animations = [{
 _data = [Vector2(0.0074074, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.498953), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2tyg"]
+radius = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rmxh3"]
+radius = 7.0
+height = 14.0
+
 [node name="Bee" type="Node2D"]
 
 [node name="Center" type="CharacterBody2D" parent="."]
@@ -43,11 +50,12 @@ position = Vector2(160, 120)
 script = ExtResource("1_mjvdv")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Center"]
-shape = SubResource("CapsuleShape2D_rmxh3")
+[node name="Boundary" type="CollisionShape2D" parent="Center"]
+shape = SubResource("CircleShape2D_qe7yu")
 script = ExtResource("2_gbrlw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Center"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
@@ -58,15 +66,19 @@ width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
 
+[node name="InteriorCollider" type="CollisionShape2D" parent="Center"]
+shape = SubResource("CircleShape2D_y2tyg")
+
 [node name="Right" type="CharacterBody2D" parent="."]
 position = Vector2(480, 120)
-script = ExtResource("1_mjvdv")
+script = ExtResource("8_6q5th")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
 shape = SubResource("CapsuleShape2D_rmxh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Right"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
@@ -79,13 +91,14 @@ script = ExtResource("6_p7vx2")
 
 [node name="Up" type="CharacterBody2D" parent="."]
 position = Vector2(160, -120)
-script = ExtResource("1_mjvdv")
+script = ExtResource("8_6q5th")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
 shape = SubResource("CapsuleShape2D_rmxh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Up"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
@@ -98,13 +111,14 @@ script = ExtResource("6_p7vx2")
 
 [node name="Down" type="CharacterBody2D" parent="."]
 position = Vector2(160, 360)
-script = ExtResource("1_mjvdv")
+script = ExtResource("8_6q5th")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
 shape = SubResource("CapsuleShape2D_rmxh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Down"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
@@ -117,13 +131,14 @@ script = ExtResource("6_p7vx2")
 
 [node name="Left" type="CharacterBody2D" parent="."]
 position = Vector2(-160, 120)
-script = ExtResource("1_mjvdv")
+script = ExtResource("8_6q5th")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
 shape = SubResource("CapsuleShape2D_rmxh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Left"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_a0quc")
 frame = 2
 frame_progress = 0.641893
@@ -134,13 +149,13 @@ width_curve = SubResource("Curve_0tbo3")
 default_color = Color(1, 1, 1, 0.392157)
 script = ExtResource("6_p7vx2")
 
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Center" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Center/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Right" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Right/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Up" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Up/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Down" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Down/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Left" method="_on_collision_shape_2d_on_bee_position_jump"]
-[connection signal="on_bee_position_jump" from="Center/CollisionShape2D" to="Left/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Center" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Center/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Right" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Right/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Up" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Up/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Down" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Down/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Left" method="_on_collision_shape_2d_on_bee_position_jump"]
+[connection signal="on_bee_position_jump" from="Center/Boundary" to="Left/Line2D" method="_on_collision_shape_2d_on_bee_position_jump"]
