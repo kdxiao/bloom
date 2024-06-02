@@ -180,6 +180,7 @@ offset_left = 42.0
 offset_top = 7.0
 offset_right = 74.0
 offset_bottom = 39.0
+focus_mode = 0
 texture_normal = ExtResource("12_yptwm")
 script = ExtResource("12_8tef5")
 
