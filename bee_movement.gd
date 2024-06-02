@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 0
 var angular_speed = PI
 var in_flower = false
+var can_place_flower = true
 var flower;
 
 func _ready():
@@ -31,13 +32,21 @@ func _process(delta):
 	position += velocity * delta
 	
 	if Input.is_action_pressed("ui_select"):
-		if in_flower == false: 
+		if can_place_flower == true:
 			var instance = flower.instantiate()
 			instance.position = global_position
 			get_node("../../").add_child(instance)
-			instance.connect("flower_enter", _on_flower_enter)
-			instance.connect("flower_exit", _on_flower_exit)
-			in_flower = true
+			can_place_flower = false
+			await get_tree().create_timer(0.3).timeout
+			can_place_flower = true
+			
+		# if in_flower == false: 
+		#	var instance = flower.instantiate()
+		#	instance.position = global_position
+		#	get_node("../../").add_child(instance)
+		#	instance.connect("flower_enter", _on_flower_enter)
+		#	instance.connect("flower_exit", _on_flower_exit)
+		#	in_flower = true
 
 func _on_flower_enter():
 	in_flower = true
