@@ -14,11 +14,11 @@ func _process(delta):
 
 
 func _on_flower_body_entered(body):
-	if body.get_name() != "Line2D":
+	if body.get_name() == "Center":
 		print("flower entered")
 		body.entered_flower(self)
 
 func _on_flower_body_exited(body):
-	if body.get_name() != "Line2D":
+	if body.get_name() == "Center":
 		print("flower exited")
 		body.exited_flower()
